@@ -19,4 +19,8 @@ For AWS S3:
 - AWS_ACCESS_KEY
 - AWS_SECRET_KEY
 
+For Admin Account Initialization:
+- DEFAULT_ADMIN_EMAIL
+- DEFAULT_ADMIN_PASSWORD
+
 _Created by Ke'an Martin Consolacion 31/07/2022_
