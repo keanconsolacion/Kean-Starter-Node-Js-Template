@@ -4,10 +4,10 @@ const Admin = require("../model/Admin");
 const auth = require("../middleware/auth");
 
 router.post("/account", async (req, res) => {
-	const { email, password, displayName } = req.body;
-	if (!email || !password || !displayName) return res.status(400).send("Insufficient data received");
+	const { email, password } = req.body;
+	if (!email || !password) return res.status(400).send("Insufficient data received");
 	try {
-		const admin = new Admin({ email, password, displayName });
+		const admin = new Admin({ email, password });
 		await admin.save();
 		const token = await admin.generateAuthToken();
 		res.cookie("auth-token", token, { httpOnly: true }); //Save jwt in http only cookie
